@@ -7,7 +7,8 @@ class Library:
     
     def list_book(self):
         with open(r"LibraryManagementSystem\books.txt", "r") as file:
-            print(file.read())
+            lines=file.read().splitlines()
+        print(lines)
 
     def add_book(self):
         book_name = input("Enter book name:")
@@ -40,7 +41,7 @@ print("""
 3) Remove Book
 """)
 
-user = int(input("Enter a num:"))
+user = int(input("Select the action you want to take:"))
 
 if user == 1:
     lib.list_book()
@@ -48,3 +49,5 @@ elif user == 2:
     lib.add_book()
 elif user == 3:
     lib.remove_book()
+else:
+    print("Please enter valid number!")
